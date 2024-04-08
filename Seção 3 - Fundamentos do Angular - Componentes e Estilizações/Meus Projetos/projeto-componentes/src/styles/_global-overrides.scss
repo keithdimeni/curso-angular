@@ -1,0 +1,15 @@
+/*Folha de estilo para arquivos globai, em vez de usar o ::ng-deep
+  Precisa se bem documentado sempre que for utilizado, para que esteja claro
+  para que quem for usar.
+*/
+/*Para exemplo dessa=e caso, a documentação seria dizendo que
+queremos que fundo do botão cancelar tenha a mesma cor em
+todos lugares onde é usado */
+// .card-button-cancel {
+//   background-color: green !important;
+// }
+
+
+.mdc-slider__track--active_fill {
+  border-color: yellowgreen !important;
+}
