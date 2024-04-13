@@ -1,0 +1,54 @@
+<!-- Property Binding: receber valor de uma propriedade usando [nomeDaPropriedade]="" -->
+<!-- Event Binding: receber um evento (nomeDoEvento)="" -->
+<!-- Attribute Binding: receber valor de um atributo [attr.nomeDoAtributo]="" -->
+<!-- Style Binding: receber valor style [style.nomeDaPropriedadeCss]="" || [style]="" -->
+<div>
+  <input
+    id="meu-input"
+    [value]="inputText"
+    [type]="inputType"
+    [disabled]="isDisabled"
+    (input)="handleInputEvent($event)"
+    >
+  <br>
+  <button (click)="showPassword()">Não mostrar a senha</button>
+  <button (click)="showText()">Mostrar Senha</button>
+  <br>
+  <button (click)="enableInput()">Habilitar</button>
+  <button (click)="disableInput()">Desabilitar</button>
+</div>
+
+<br><br>
+<div>
+  <button [attr.title]="buttonTitle">Teste</button>
+  <button [attr.disabled]="buttonDisable ? true : null">Desabilitar</button>
+  <br><br>
+  <button (click)="onButtonClick()">Alterar Atributo</button>
+</div>
+
+<br>
+<div>
+  <!-- Sem o uso do style binding -->
+  <button style="width: 100px; background-color: aqua;">Botão</button>
+  <!-- Usando o style binding -->
+  <button [style.width]="widthButton" [style.backgroundColor]="backgroundColorButton">Botão 1</button>
+  <button [style.width.px]="widthButtonPx" [style.backgroundColor]="'yellow'">Botão 2</button>
+  <button [style]="'width: 140px; backgroundColor: green;'">Botão 3</button>
+  <button [style]="{ width: '150px', backgroundColor: 'orange' }">Botão 4</button>
+  <button [style]="stylesObj">Botão 5</button>
+
+  <br><br>
+  <button (click)="updateStyleObj()">Atualizar obj</button>
+  <button (click)="updateStyleObjCorrect()">Atualizar obj correto</button>
+  <button (click)="updateWidth()">Atualizar width</button>
+</div>
+<br>
+<div>
+  <button [class.red-button]="isRedButton" (click)="isGreen = false">Botão Red 1</button>
+  <button [class.green-button]="true" (click)="isGreen = true">Botão Red 2</button>
+
+  <button [class]="{
+    'red-button': !isGreen,
+    'green-button': isGreen
+  }">Botão Objeto</button>
+</div>
