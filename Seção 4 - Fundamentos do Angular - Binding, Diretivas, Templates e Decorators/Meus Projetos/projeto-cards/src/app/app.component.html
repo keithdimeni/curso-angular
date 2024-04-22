@@ -1,0 +1,15 @@
+<div class="cards-container">
+  <app-card
+    [plan]="cardPurple.plan"
+    [price]="cardPurple.price"
+    [style]="cardPurple.style"
+    (buttonClicked)="onCardButtonClicked()"
+  ></app-card>
+
+  <app-card
+    [plan]="cardOrange.plan"
+    [price]="cardOrange.price"
+    [style]="cardOrange.style"
+    (buttonClicked)="onCardButtonClicked()"
+  ></app-card>
+</div>
